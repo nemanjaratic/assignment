@@ -1,62 +1,345 @@
-body{
-        background: #050210;
-
+*{
+    margin: 0;
+    padding: 0;
 }
-.border{
-    width: 300px;
-    height: 300px;
-    background: #050210;
+:root{
+    --text-color:rgb(134, 134, 134);
+}
+.row{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    margin: 170px auto;
 }
-.center{
-    background: #43466730;
-    border-radius: 100%;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    animation-name: myanimation;
-    animation-duration: 1s;
-    animation-delay: none;
-    animation-iteration-count: infinite;
-    transition-timing-function: ease-out;
+.container{
+    width: 1040px;
+    padding: 0;
 }
-@keyframes myanimation{
-    from {
-        width: 10px;
-        height: 10px;
-    }
-        
-    to{
-        width: 300px;
-        height: 300px;
-    }
-}
-.border::before{
-    content: "";
-    border-radius: 100%;
-    position: absolute;
-    height: 360px;
-    width: 360px;
-    background: linear-gradient(#fb5dad,  #55fb9f,#b97aff );
-    animation-name: okretanje;
-    animation-fill-mode: forwards;
-    animation-duration: 1.2s;
-    animation-delay: none;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    z-index: -1;
-    filter: blur(10px);
-} 
 
-@keyframes okretanje{
-    from{
-        transform: rotate(0deg);
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* header */
+
+.header{
+    background: white;
+
+}
+.header .col-6{
+    padding: 0;
+    margin: 0;
+}
+.logo{
+    font-size: 40px;
+    padding: 20px 0;
+    margin: 0;
+    color: var(--text-color);
+    font-weight: lighter;
+}
+.header ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.header ul li{
+    list-style: none;
+    padding: 20px 0;
+}
+.header ul li a{
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+#active{
+    color: black;
+    font-weight: bold;
+}
+.menu{
+    display: none;
+}
+
+
+/* end of header */
+
+/* hero */
+
+.hero{
+    position: relative;
+    width: 100%;
+}
+.hero img{
+    max-width: 100%;
+}
+.hero p{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(23, 231, 151);
+    padding: 15px;
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    top: 60px;
+}
+.hero_img{
+    padding: 0;
+    background-image: url("./slike/hero.jpg");
+}
+
+/* end of hero */
+
+
+/* icons */
+
+.icons{
+    text-align: center;
+    padding: 60px 0;
+}
+.icons h4{
+    margin: 15px ;
+}
+.icons p{
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+/* end of icons */
+
+/* recent */
+
+.recent{
+    display: flex;
+}
+.recent img{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.naslov5{
+    border-bottom: 1px solid rgb(199, 198, 198);
+    margin-bottom: 25px;
+    padding: 0;
+}
+.recent .col-3{
+    padding: 0;
+    width: 23%;
+}
+.recent .col-3 p:nth-of-type(2){
+    color: var(--text-color);
+    font-size: 13px;
+}
+p.h6{
+    margin-bottom: 0;
+}
+
+
+/* end of recent */
+
+/* blog */
+
+.blog{
+    display: flex;
+    padding: 50px 0;
+}
+.blog img{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.naslov5{
+    border-bottom: 1px solid rgb(199, 198, 198);
+    margin-bottom: 25px;
+    padding: 0;
+}
+.blog .col-4{
+    padding: 0;
+    width: 32%;
+}
+.text{
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+/* end of blog */
+
+/* footer-top */
+
+.footer-top{
+    background: rgb(46, 46, 46);
+    color: white;
+    padding-top: 50px;
+    margin: 0;
+}
+.footer-top .wrapper{
+    display: flex;
+    padding: 0 0 50px 0;
+    justify-content: space-between;
+}
+.footer-top .h6{
+    margin-bottom: 20px;
+}
+.footer-top .col-4{
+    width: 30%;
+}
+.col-4 td{
+    font-size: 13px;
+    padding:0;
+}
+.col-4 td a{
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 0;
+}
+.drugi td a{
+    padding: 5px 0;
+}
+/* end of footer-top */
+
+/* footer-bottom */
+
+.footer-bottom{
+    background-color: black;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+}
+.footer-bottom p{
+    padding: 15px 0;
+    margin:0;
+}
+
+/* end of footer-bottom */
+
+
+
+@media screen and (min-width:769px) and (max-width:1023px) {
+    .wrapper{
+        width: 70%;
     }
-    to{
-        transform: rotate(360deg);
+    .container{
+        width: 100%;
     }
-}   
+    .hero p{
+        font-size: 18px;
+        padding: 10px;
+        left: 108px;
+        top: 20px;
+    }
+    .hero{
+        margin: 0;
+    }
+    .hero img{
+        max-width: 100%;
+    }
+    .nav{
+        display: none;
+    }
+    .menu{
+    display: flex;
+    font-size: 1em;
+    align-items: center;
+    }
+    .menu img {
+    max-width: 15px;
+    max-height: 15px;
+    color: var(--text-color);
+    margin-right: 15px;
+    color: var(--text-color);
+    }
+    .menu p {
+    margin: 0;
+    }
+    .icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons .col-3{
+        width: 100%;
+    }
+    .recent .col-3{
+    width: 49%;
+    }
+    .blog .col-4{
+    width: 100%;
+    }
+    .footer-top .wrapper{
+        flex-direction: column;
+    }
+    .footer-top .col-4{
+        width: 100%;
+    }
+    .middle{
+        padding: 70px 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .wrapper{
+        width: 90%;
+    }
+    .container{
+        width: 100%;
+    }
+    .hero p{
+        font-size: 13px;
+        padding: 10px;
+        left: 27px;
+        top: 70px;
+        width: 90%;
+    }
+    .logo{
+        font-size: 25px;
+    }
+    .hero{
+        margin: 0;
+    }
+    .hero img{
+        max-width: 100%;
+    }
+    .nav{
+        display: none;
+    }
+    .menu{
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    }
+    .menu img {
+    max-width: 15px;
+    max-height: 15px;
+    color: var(--text-color);
+    margin-right: 15px;
+    color: var(--text-color);
+    }
+    .menu p {
+    margin: 0;
+    }
+    .icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .icons .col-3{
+        width: 100%;
+    }
+    .recent .col-3{
+    width: 100%;
+    }
+    .recent img{
+        width: 100%;
+    }
+    .blog .col-4{
+    width: 100%;
+    }
+    .footer-top .wrapper{
+        flex-direction: column;
+    }
+    .footer-top .col-4{
+        width: 100%;
+    }
+    .middle{
+        padding: 70px 0;
+    }
+}
